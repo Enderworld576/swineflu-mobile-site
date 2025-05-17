@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flu Tracker QR Code</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        #qrcode {
+            margin: 20px;
+            padding: 20px;
+            border: 2px solid #00695c;
+            border-radius: 15px;
+        }
+        .instructions {
+            max-width: 600px;
+            margin: 20px;
+            padding: 20px;
+            background: #f0f0f0;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mobile Flu Tracker QR Code</h1>
+    
+    <div class="instructions">
+        <h2>Steps to Use:</h2>
+        <ol>
+            <li>Host the flu tracker code on your web server</li>
+            <li>Replace the placeholder URL in the JavaScript below</li>
+            <li>Open this page on a computer to display the QR code</li>
+            <li>Scan with any smartphone camera</li>
+        </ol>
+    </div>
+
+    <div id="qrcode"></div>
+
+    <script>
+        // Replace with your actual hosted URL
+        const trackerURL = 'https://your-website.com/flu-tracker-mobile.html';
+        
+        new QRCode(document.getElementById("qrcode"), {
+            text: trackerURL,
+            width: 256,
+            height: 256,
+            colorDark: "#00695c",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.H
+        });
+    </script>
+</body>
+</html>
